@@ -1,0 +1,2 @@
+Queue.o: Queue.c Queue.h
+main.o: main.c Queue.h
