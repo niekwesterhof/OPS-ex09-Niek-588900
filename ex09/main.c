@@ -5,7 +5,7 @@
  * Author:       J. Onokiewicz, M. van der Sluys
  * Description:  OPS exercise 5: Queues
  ******************************************************************************/
-
+/*
 
 #include "Queue.h"
 #include <stdio.h>
@@ -60,3 +60,4 @@ int main() {
   
   return 0;
 }
+*/

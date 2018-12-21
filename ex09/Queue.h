@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-#define TEXT_SIZE 20
+#define TEXT_SIZE 30
 
 // This struct may not contain pointers pointing outside the struct
 typedef struct {

@@ -8,9 +8,9 @@
 
 
 CXX = gcc
-CXXFLAGS=-g -O0 -Wall -Wextra
+CXXFLAGS=-g -O0 -pthread -Wall -Wextra
 
-EXECUTABLE = queue
+EXECUTABLE = sharedqueue
 SOURCES = ${wildcard *.c}
 HEADERS = ${wildcard *.h}
 OBJECTS = ${SOURCES:.c=.o}

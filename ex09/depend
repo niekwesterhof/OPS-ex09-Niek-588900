@@ -1,2 +1,3 @@
+sharedqueue.o: sharedqueue.c sharedqueue.h Queue.h
 Queue.o: Queue.c Queue.h
-main.o: main.c Queue.h
+main.o: main.c
