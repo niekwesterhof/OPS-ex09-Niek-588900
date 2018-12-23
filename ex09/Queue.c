@@ -10,6 +10,8 @@
 #include "Queue.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 
 // Create a new queue:
 void createQueue(queue_t* queue, data_t data) {
@@ -105,15 +107,34 @@ void deleteQueue(queue_t* queue) {
 // List the data/nodes in a queue:
 void showQueue(const queue_t* queue) {
   const node_t* nextN = queue->lastNode;
-  if(nextN == NULL) {
+  FILE *pfile = 0;
+  if(nextN == NULL) 
+  {
     printf("Queue is empty, last node is %p\n", (void*) queue->lastNode);
-  } else {
-    printf("Queue contains %ld nodes:\n", sizeQueue(queue));
+  } 
+  else 
+  { 
+    pfile = fopen("ex09.txt","a");
+    if(pfile == NULL)
+    {
+      printf("error opeing file\n");
+      exit(EXIT_FAILURE);
+    }
+  
+    printf("Queue contains %d nodes:\n", sizeQueue(queue));
     printf("Last node: %p\n", (void*) queue->lastNode);
-    do {
+    do 
+    {
       nextN = nextN->nextNode;
       printf("pNode = %p  Data = '%d' '%s'  nextN = %p\n",
              (void*)nextN, nextN->data.intVal, nextN->data.text, (void*)nextN->nextNode);
-    } while(nextN != queue->lastNode);
+      fprintf(pfile,"pNode = %p  Data = '%d' '%s'  nextN = %p\n",
+            (void*)nextN, nextN->data.intVal, nextN->data.text, (void*)nextN->nextNode);
+    } 
+    while(nextN != queue->lastNode);
+    printf("\n");
+    pclose(pfile);
   }
 }
+
+

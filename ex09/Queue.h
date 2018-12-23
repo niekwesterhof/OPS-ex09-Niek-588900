@@ -11,6 +11,7 @@
 #define QUEUE_H
 
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define TEXT_SIZE 30
 

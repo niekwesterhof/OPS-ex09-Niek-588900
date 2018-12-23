@@ -12,8 +12,10 @@ typedef struct {
 
 // Prototype functions
 int createThread(int time, const char message [20]);
-int signalStopHandler(int signal);
-void *threadFunction(void* argv);
+void signalStopHandler(int signal);
+void *threadConsumer(void* argv);
+void *threadProducer(void* argv);
 void exitThreads(void);
+void emptyFile(void);
 
 #endif
